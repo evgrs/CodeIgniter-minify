@@ -37,3 +37,10 @@ Thanks,
 -Slawomir Jasinski
  slav123@gmail.com
  @slavomirj
+
+======================================
+
+The main difference of this fork that the deploy methods create minified file if it is not exists.
+It is a good idea to remove minified files from assets directory by hand if you need refresh them.
+
+Yours, Evgeny Raspopov
