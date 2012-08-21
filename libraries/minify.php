@@ -137,19 +137,18 @@ class minify
 		}
 	}
 
-	public function deploy_css($refresh = false)
+	public function deploy_css()
 	{
-		if ($refresh) {
-			unlink($this->assets_dir . '/' . $this->css_file);
+		if (!file_exists($this->assets_dir . '/' . $this->css_file)) {
 			$this->join_css();
 		}
 		$this->ci->load->helper('html');
 		return link_tag($this->assets_dir . '/' . $this->css_file);
 	}
 
-	public function deploy_js($refresh = false)
+	public function deploy_js()
 	{
-		if ($refresh) {
+		if (!file_exists($this->assets_dir . '/' . $this->js_file)) {
 			$this->join_js();
 		}
 		return "<script type=\"text/javascript\" src=\"" . base_url() . $this->assets_dir . '/' . $this->js_file . "\"></script>";
